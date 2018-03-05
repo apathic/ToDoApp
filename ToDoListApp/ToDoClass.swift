@@ -9,6 +9,6 @@
 import UIKit
 
 class ToDoItem {
-    var ToDoName : String = ""
-    var ToDoImportant : Bool = false
+    var name : String = ""
+    var important : Bool = false
 }
