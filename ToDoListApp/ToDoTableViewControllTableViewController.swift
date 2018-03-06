@@ -11,7 +11,7 @@ import UIKit
 class ToDoTableViewControllTableViewController: UITableViewController {
 
     var toDos : [ToDoItem] = []
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         toDos = createToDos()
@@ -42,10 +42,6 @@ class ToDoTableViewControllTableViewController: UITableViewController {
         gj.name = "Get a Job"
         gj.important = true
         
-        let kk = ToDoItem()
-        kk.name = "Here Kitty Kitty"
-        kk.important = false
-        
         let em = ToDoItem()
         em.name = "Email Sweetie"
         em.important = false
@@ -53,10 +49,6 @@ class ToDoTableViewControllTableViewController: UITableViewController {
         let mm = ToDoItem()
         mm.name = "Manually Move"
         mm.important = false
-        
-        let dd = ToDoItem()
-        dd.name = "Call Dad"
-        dd.important = false
         
         let cm = ToDoItem()
         cm.name = "Call Mom"
@@ -66,7 +58,7 @@ class ToDoTableViewControllTableViewController: UITableViewController {
         xx.name = "Pay Bill"
         xx.important = true
         
-        return [eg, dg, gf, sh, hh, gj, kk, em, mm, dd, cm, xx]
+        return [eg, dg, gf, sh, hh, gj, em, mm, cm, xx]
     }
 
     override func didReceiveMemoryWarning() {
@@ -74,7 +66,6 @@ class ToDoTableViewControllTableViewController: UITableViewController {
     }
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
         return 1
     }
 
@@ -93,4 +84,10 @@ class ToDoTableViewControllTableViewController: UITableViewController {
         }
         return cell
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let addVC = segue.destination as! AddNewToDoController
+        addVC.previousVC = self
+    }
+    
 }

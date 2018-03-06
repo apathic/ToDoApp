@@ -36,7 +36,7 @@
                     <navigationItem key="navigationItem" title="Task List" id="aj0-gU-MGe">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="muZ-EG-L0Y">
                             <connections>
-                                <segue destination="zfj-Mw-9PL" kind="show" id="BIH-vV-ZqX"/>
+                                <segue destination="zfj-Mw-9PL" kind="show" id="zVb-Vo-HRH"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -45,10 +45,10 @@
             </objects>
             <point key="canvasLocation" x="806" y="257"/>
         </scene>
-        <!--View Controller-->
+        <!--Add New To Do Controller-->
         <scene sceneID="kVd-P8-nwR">
             <objects>
-                <viewController id="zfj-Mw-9PL" sceneMemberID="viewController">
+                <viewController id="zfj-Mw-9PL" customClass="AddNewToDoController" customModule="ToDoListApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="WRQ-Cc-U87">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -58,12 +58,11 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="Add New To Do Item"/>
+                                <connections>
+                                    <action selector="AddTapped:" destination="zfj-Mw-9PL" eventType="touchUpInside" id="Tla-JM-uxs"/>
+                                </connections>
                             </button>
-                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="gl7-fw-Hh0">
-                                <rect key="frame" x="43" y="343" width="25" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </stackView>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="z5i-I6-0wj">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="z5i-I6-0wj">
                                 <rect key="frame" x="20" y="131" width="280" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -100,6 +99,10 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Mcm-3o-yhr"/>
                     </view>
+                    <connections>
+                        <outlet property="ToDoImportance" destination="YRF-Tu-cU1" id="uyf-8N-DC8"/>
+                        <outlet property="ToDoText" destination="z5i-I6-0wj" id="eRA-ZB-k2F"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0hc-RH-H1E" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
