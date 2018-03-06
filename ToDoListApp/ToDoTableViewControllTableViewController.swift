@@ -54,14 +54,24 @@ class ToDoTableViewControllTableViewController: UITableViewController {
         mm.name = "Manually Move"
         mm.important = false
         
-        return [eg, dg, gf, sh, hh, gj, kk, em, mm]
+        let dd = ToDoItem()
+        dd.name = "Call Dad"
+        dd.important = false
+        
+        let cm = ToDoItem()
+        cm.name = "Call Mom"
+        cm.important = true
+        
+        let xx = ToDoItem()
+        xx.name = "Pay Bill"
+        xx.important = true
+        
+        return [eg, dg, gf, sh, hh, gj, kk, em, mm, dd, cm, xx]
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
-
-    // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
@@ -71,7 +81,6 @@ class ToDoTableViewControllTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return toDos.count
     }
-
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ToDoTableViewIdentifier", for: indexPath)
@@ -80,7 +89,7 @@ class ToDoTableViewControllTableViewController: UITableViewController {
             cell.textLabel?.text = "❗️ " + toDos[indexPath.row].name
         }
         else {
-            cell.textLabel?.text = "∙   " + toDos[indexPath.row].name
+            cell.textLabel?.text = " ∙   " + toDos[indexPath.row].name
         }
         return cell
     }
