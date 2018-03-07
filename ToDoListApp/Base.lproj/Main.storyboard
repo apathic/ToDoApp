@@ -40,6 +40,9 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <segue destination="N5z-2K-ujp" kind="show" identifier="MoveToComplete" id="gb1-1g-jpD"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Vyk-du-lIk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -107,6 +110,49 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0hc-RH-H1E" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1518.75" y="256.25"/>
+        </scene>
+        <!--Complete View Controller-->
+        <scene sceneID="wdC-rb-b1Q">
+            <objects>
+                <viewController id="N5z-2K-ujp" customClass="CompleteViewController" customModule="ToDoListApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="sjz-Aj-qAp">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qNY-RI-uAr">
+                                <rect key="frame" x="20" y="84" width="280" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rm6-W9-OJd">
+                                <rect key="frame" x="20" y="139" width="280" height="39"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <state key="normal" title="Complete"/>
+                                <connections>
+                                    <action selector="CompleteTask:" destination="N5z-2K-ujp" eventType="touchUpInside" id="Gpa-sP-VLd"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="qNY-RI-uAr" firstAttribute="top" secondItem="Exv-IQ-eaN" secondAttribute="top" constant="20" id="La1-up-bSc"/>
+                            <constraint firstItem="qNY-RI-uAr" firstAttribute="leading" secondItem="Exv-IQ-eaN" secondAttribute="leading" constant="20" id="Npe-vG-JQU"/>
+                            <constraint firstItem="rm6-W9-OJd" firstAttribute="top" secondItem="qNY-RI-uAr" secondAttribute="bottom" constant="25" id="RGg-TD-urD"/>
+                            <constraint firstItem="qNY-RI-uAr" firstAttribute="centerX" secondItem="sjz-Aj-qAp" secondAttribute="centerX" id="df6-oa-T8d"/>
+                            <constraint firstItem="rm6-W9-OJd" firstAttribute="leading" secondItem="Exv-IQ-eaN" secondAttribute="leading" constant="20" id="gaO-6J-rA3"/>
+                            <constraint firstItem="Exv-IQ-eaN" firstAttribute="trailing" secondItem="qNY-RI-uAr" secondAttribute="trailing" constant="20" id="u3z-7g-lby"/>
+                            <constraint firstItem="Exv-IQ-eaN" firstAttribute="trailing" secondItem="rm6-W9-OJd" secondAttribute="trailing" constant="20" id="vxn-LP-UAn"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Exv-IQ-eaN"/>
+                    </view>
+                    <connections>
+                        <outlet property="Label_Description" destination="qNY-RI-uAr" id="TSR-Bv-1yS"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pIt-Hz-MtS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="802.5" y="1040"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="U4n-Ba-8eh">
