@@ -38,10 +38,6 @@ class ToDoTableViewControllTableViewController: UITableViewController {
         hh.name = "Head Home"
         hh.important = true
         
-        let gj = ToDoItem()
-        gj.name = "Get a Job"
-        gj.important = true
-        
         let em = ToDoItem()
         em.name = "Email Sweetie"
         em.important = false
@@ -58,7 +54,7 @@ class ToDoTableViewControllTableViewController: UITableViewController {
         xx.name = "Pay Bill"
         xx.important = true
         
-        return [eg, dg, gf, sh, hh, gj, em, mm, cm, xx]
+        return [eg, dg, gf, sh, hh, em, mm, cm, xx]
     }
 
     override func didReceiveMemoryWarning() {
@@ -86,8 +82,8 @@ class ToDoTableViewControllTableViewController: UITableViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let addVC = segue.destination as! AddNewToDoController
-        addVC.previousVC = self
+        if let addVC = segue.destination as? AddNewToDoController {
+            addVC.previousVC = self
+        }
     }
-    
 }

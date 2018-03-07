@@ -21,8 +21,14 @@ class AddNewToDoController: UIViewController {
     
     @IBAction func AddTapped(_ sender: Any) {
         let a = ToDoItem()
-        a.name = ToDoText.text!
-        a.important = ToDoImportance.isOn
+        
+        if let aw = ToDoText.text {
+            a.name = ToDoText.text!
+            a.important = ToDoImportance.isOn
+        } else {
+            a.name = "Test Input"
+            a.important = true
+        }
         
         previousVC.toDos.append(a)
         previousVC.tableView.reloadData()
